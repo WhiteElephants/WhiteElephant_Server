@@ -1,0 +1,27 @@
+{
+  "name": "WhiteElephant_Server",
+  "version": "0.0.1",
+  "description": "a wechat web shop using nodejs express",
+  "main": "app.js",
+  "scripts": {
+    "init": "npm install --save --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WhiteElephants/WhiteElephant_Server.git"
+  },
+  "keywords": [
+    "nodejs",
+    "service",
+    "logistics"
+  ],
+  "author": "WhiteElephants Group",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "cookie-parser": "^1.4.0",
+    "express": "^4.13.3",
+    "mongoose": "^4.2.5",
+    "morgan": "^1.6.1"
+  }
+}

@@ -1,7 +1,7 @@
 module.exports = {
     mongo: {
         schema: 'mongodb://localhost/white_elephant',
-        port: 1128
+        port: 27017
     },
     mysql: {
         connection: {

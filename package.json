@@ -6,7 +6,7 @@
   "scripts": {
     "init": "npm install --save --verbose",
     "initdirs": "mkdir mongo",
-    "mongo": "mongod --dbpath='./mongo' --port=1128 &"
+    "mongo": "mongod --dbpath='./mongo' &"
   },
   "repository": {
     "type": "git",
@@ -20,11 +20,12 @@
   "author": "WhiteElephants Group",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.14.1",
+    "body-parser": "^1.15.2",
     "cookie-parser": "^1.4.0",
     "express": "^4.13.3",
     "mongoose": "^4.5.7",
-    "morgan": "^1.6.1",
-    "sequelize": "^3.14.1"
+    "morgan": "^1.7.0",
+    "mysql": "^2.11.1",
+    "sequelize": "^3.23.6"
   }
 }

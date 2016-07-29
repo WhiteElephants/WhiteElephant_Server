@@ -3,6 +3,7 @@ var app = express();
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var mongoose = require("mongoose");
+var morgan = require("morgan");
 var config = require('./config/config');
 global.config = config;
 

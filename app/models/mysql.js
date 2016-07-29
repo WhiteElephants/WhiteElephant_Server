@@ -4,7 +4,7 @@
 
 "use strict";
 var Sequelize = require("sequelize");
-var connection = global.config.connection;
+var connection = global.config.mysql.connection;
 
 var sequelize = new Sequelize(connection.database, connection.username, connection.password, {
     host: connection.host,

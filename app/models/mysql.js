@@ -7,7 +7,7 @@ var Sequelize = require("sequelize");
 var connection = global.config.connection;
 
 var sequelize = new Sequelize(connection.database, connection.username, connection.password, {
-    host: 'localhost',
+    host: connection.host,
     dialect: 'mysql',
     pool: {
         max: 5,

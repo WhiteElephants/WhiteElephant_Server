@@ -11,12 +11,12 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
 app.use(morgan("combined"));
 
-mongoose.connect(config.db);//for now we don't use db.and we will open this if necessary...
+mongoose.connect(config.mongo.schema);//for now we don't use db.and we will open this if necessary...
 
 //define the router and main handlers
 require('./config/routes')(app);
 
 //setting listen port
-var server = app.listen(config.port, function() {
+var server = app.listen(config.port, function () {
     console.log('App started listening on port %d', server.address().port);
 });

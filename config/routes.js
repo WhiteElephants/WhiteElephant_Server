@@ -1,6 +1,7 @@
 var express = require('express');
 var postController = require('../app/controllers/postController');
 var accountController = require('../app/controllers/accountController');
+var mysqlController = require('../app/controllers/mysqlController');
 var wrap = require("../app/utils").Wrapper;
 
 module.exports = function (app) {
@@ -25,9 +26,15 @@ module.exports = function (app) {
         return router;
     })());
 
+    app.use("/mysql", (function () {
+        var router = express.Router();
+        router.get("/reset", mysqlController.reset);
+        return router;
+    })());
+
     app.use("/posts", (function () {
         var router = express.Router();
-
+        router.get("/create", postController.create);
         return router;
     })());
 

@@ -4,7 +4,8 @@
   "description": "a wechat web shop using nodejs express",
   "main": "app.js",
   "scripts": {
-    "init": "npm install --save --verbose"
+    "init": "npm install --save --verbose",
+    "initdirs":"mkdir mongo"
   },
   "repository": {
     "type": "git",

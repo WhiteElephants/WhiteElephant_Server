@@ -1,6 +1,6 @@
 var express = require('express');
-var userController = require('../app/controllers/userController');
-var mainController = require('../app/controllers/mainController');
+var userController = require('../app/controllers/postController');
+var mainController = require('../app/controllers/accountController');
 
 module.exports = function (app) {
     app.get('/', mainController.showIndexPage);

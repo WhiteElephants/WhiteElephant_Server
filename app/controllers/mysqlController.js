@@ -1,15 +1,15 @@
-var db = require("../models/mysql");
+var mysql = require("../models/mysql");
 var wrap = require("../utils").Wrapper;
 
 module.exports.reset = function (req, res) {
-    db.sequelize.sync({force: true}).then(function () {
+    mysql.sequelize.sync({force: true}).then(function () {
         res.json({status: true});
     });
 };
 
 module.exports.setupBasics = function (req, res) {
 
-    db.User.create({
+    mysql.User.create({
         id: "dsaoajs0djas231231290921039fd90f9sd0f9ds0",
         user_name: "gordon rawe",
         nick_name: "wind chaser",

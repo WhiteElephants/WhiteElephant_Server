@@ -1,1 +1,2 @@
-var UserModel = require("../models/user").UserModel;
+var wrap = require("../utils").Wrapper;
+var UserModel = require("../models/mongo").UserModel;

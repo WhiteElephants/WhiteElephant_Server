@@ -1,4 +1,4 @@
-var db = require("../models/db");
+var db = require("../models/mysql");
 var wrap = require("../utils").Wrapper;
 
 module.exports.reset = function (req, res) {

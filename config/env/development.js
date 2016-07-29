@@ -1,16 +1,15 @@
 module.exports = {
     mongo: {
-        db: 'mongodb://localhost/wechat-web-shop',
-        port: 1128,
-        env: 'development'
+        db: 'mongodb://localhost/white_elephant',
+        port: 1128
     },
     mysql: {
-        env: "development",
         connection: {
-            "database": "wechat",
+            "database": "white_elephant",
             "username": "gordon",
             "password": "something"
         },
-        port: 1128
-    }
+        port: 1129
+    },
+    env: 'development'
 };

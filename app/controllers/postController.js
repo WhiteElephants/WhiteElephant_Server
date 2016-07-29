@@ -3,5 +3,9 @@ var NodeSchema = require("../models/mongo").NodeSchema;
 var PostSchema = require("../models/mongo").PostSchema;
 
 module.exports.create = function (req, res) {
-    var data = req.body.data;
+    var node = new NodeSchema({text: "hahahah"});
+    node.save(function (err, nodeValue) {
+        if (err) return res.json(wrap(true, "", nodeValue));
+        else res.json(wrap(false, err, ""));
+    });
 };

@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "init": "npm install --save --verbose",
-    "initdirs":"mkdir mongo"
+    "initdirs": "mkdir mongo",
+    "mongo": "mongod --dbpath='./mongo' --port=1128 &"
   },
   "repository": {
     "type": "git",
@@ -22,7 +23,7 @@
     "body-parser": "^1.14.1",
     "cookie-parser": "^1.4.0",
     "express": "^4.13.3",
-    "mongoose": "^4.2.5",
+    "mongoose": "^4.5.7",
     "morgan": "^1.6.1",
     "sequelize": "^3.14.1"
   }

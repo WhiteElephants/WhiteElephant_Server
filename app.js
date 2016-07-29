@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var mongoose = require("mongoose");
 var config = require('./config/config');
-process.env.rootDir = __dirname;
+global.config = config;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));

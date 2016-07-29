@@ -12,12 +12,12 @@ module.exports = function (app) {
          * basically the sid(service id) and the cid(channel id) are required,
          * the sid and the channel are contained in the auth.
          */
-        var auth = req.body.auth;
+        var auth = req.body.auth == undefined ? {} : JSON.parse(req.body.auth);
 
-        if (auth.sid == "a3bfa179d46741cf84baf1dedc809fe2" && auth.cid == "7b0fc70e97ff459ab3b16bac7fee08e7") {
-            return next();
+        if (auth == undefined || auth.sid != "a3bfa179d46741cf84baf1dedc809fe2" || auth.cid != "7b0fc70e97ff459ab3b16bac7fee08e7") {
+            return res.json(wrap(false, "illegal request", ""));
         }
-        res.json(wrap(false, "illegal request", ""));
+        next();
     });
 
     app.use("/accounts", (function () {
@@ -28,19 +28,19 @@ module.exports = function (app) {
 
     app.use("/mysql", (function () {
         var router = express.Router();
-        router.get("/reset", mysqlController.reset);
+        router.post("/reset", mysqlController.reset);
         return router;
     })());
 
     app.use("/posts", (function () {
         var router = express.Router();
-        router.get("/create", postController.create);
+        router.post("/create", postController.create);
         return router;
     })());
-
-    // assume 404 since no middleware responded
+    
+    // // assume 404 since no middleware responded
     app.use(function (req, res) {
-        res.status(404).json(false, "url not mapped", {url: req.originalUrl});
+        res.json(wrap(false, "url not mapped", {url: req.originalUrl}));
     });
 }
 ;

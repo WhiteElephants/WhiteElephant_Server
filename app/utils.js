@@ -3,7 +3,7 @@
  */
 
 var Wrapper = function (status, message, data) {
-    return {status: status, message: error, data: data};
+    return {status: status, message: message, data: data};
 };
 
 module.exports.Wrapper = Wrapper;

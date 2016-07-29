@@ -1,1 +1,1 @@
-mongod --dbpath "../mongo"
+mongod --dbpath='../mongo' &

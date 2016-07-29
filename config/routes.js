@@ -1,34 +1,39 @@
 var express = require('express');
-var userController = require('../app/controllers/postController');
-var mainController = require('../app/controllers/accountController');
+var postController = require('../app/controllers/postController');
+var accountController = require('../app/controllers/accountController');
+var wrap = require("../app/utils").Wrapper;
 
 module.exports = function (app) {
-    app.get('/', mainController.showIndexPage);
 
-    app.use("/users", (function () {
+    //handle auth
+    app.use(function (req, res, next) {
+        /** we should make sure the head request consists the necessary auth information,
+         * basically the sid(service id) and the cid(channel id) are required,
+         * the sid and the channel are contained in the auth.
+         */
+        var auth = req.body.auth;
+
+        if (auth.sid == "a3bfa179d46741cf84baf1dedc809fe2" && auth.cid == "7b0fc70e97ff459ab3b16bac7fee08e7") {
+            return next();
+        }
+        res.json(wrap(false, "illegal request", ""));
+    });
+
+    app.use("/accounts", (function () {
         var router = express.Router();
 
         return router;
     })());
 
-    //error handling
-    app.use(function (err, req, res, next) {
-        // treat as 404
-        if (err.message
-            && (~err.message.indexOf('not found')
-            || (~err.message.indexOf('Cast to ObjectId failed')))) {
-            return next();
-        }
-        console.error(err.stack);
-        // error page
-        res.status(500).render('500', {error: err.stack});
-    });
+    app.use("/posts", (function () {
+        var router = express.Router();
+
+        return router;
+    })());
 
     // assume 404 since no middleware responded
     app.use(function (req, res) {
-        res.status(404).render('404', {
-            url: req.originalUrl,
-            error: 'Not found'
-        });
+        res.status(404).json(false, "url not mapped", {url: req.originalUrl});
     });
-};
+}
+;

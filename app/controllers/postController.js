@@ -18,7 +18,7 @@ module.exports.create = function (req, res) {
         if (err) {
             res.json(wrap(false, "", {}));
         } else {
-            res.json(wrap(true, "", {title: retrieve.title, id: retrieve.id}));
+            res.json(wrap(true, "", retrieve));
         }
     });
 };

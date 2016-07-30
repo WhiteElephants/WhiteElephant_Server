@@ -15,7 +15,7 @@ module.exports = function (app) {
         var auth = req.body.auth == undefined ? {} : JSON.parse(req.body.auth);
 
         if (auth == undefined || auth.sid != "a3bfa179d46741cf84baf1dedc809fe2" || auth.cid != "7b0fc70e97ff459ab3b16bac7fee08e7") {
-            return res.json(wrap(false, "illegal request", ""));
+            return res.json(wrap(false, "illegal request", {}));
         }
         next();
     });
@@ -37,7 +37,7 @@ module.exports = function (app) {
         router.post("/create", postController.create);
         return router;
     })());
-    
+
     // // assume 404 since no middleware responded
     app.use(function (req, res) {
         res.json(wrap(false, "url not mapped", {url: req.originalUrl}));

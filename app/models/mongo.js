@@ -1,18 +1,16 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
-var NodeSchema = new Schema({
-    text: String,
-    imageUrl: String,
-    imageDescription: String
-});
-
 var PostSchema = new Schema({
     title: String,
     authorName: String,
     readCount: Number,
-    nodes: [NodeSchema]
+    time: {type: Date, default: Date.now},
+    nodes: [{
+        text: String,
+        imageUrl: String,
+        imageDescription: String
+    }]
 });
 
-module.exports.NodeSchema = mongoose.model('NodeSchema', NodeSchema);
 module.exports.PostSchema = mongoose.model('PostSchema', PostSchema);

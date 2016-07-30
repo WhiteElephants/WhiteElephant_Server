@@ -35,7 +35,10 @@ module.exports = function (app) {
     app.use("/posts", (function () {
         var router = express.Router();
         router.post("/create", postController.create);
-        router.post("/all", postController.all)
+        router.post("/all", postController.all);
+        router.post("/delete", postController.delete);
+        router.post("/update", postController.update);
+        router.post("/retrieve", postController.retrieve);
         return router;
     })());
 

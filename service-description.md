@@ -39,10 +39,10 @@ Routes:
 #request
 ------------------------------------------------------------------------
 {
-    title:网约车欢庆新政之后，恐迎来地方部门更严厉制裁,
-    readCount:1000,
-    authorName:罗明川,
-    nodes:[
+    "title":"网约车欢庆新政之后，恐迎来地方部门更严厉制裁",
+    "readCount":1000,
+    "authorName":"罗明川",
+    "nodes":[
         {
             "text":"网约车合法化，似乎苦尽甘来，几乎大家都在欢庆政策对网约车放宽？但最终的结果可能是：未来恐怕迎来更加严厉的制裁，这可能并不是危言耸听。",
             "imageUrl":"http://e.hiphotos.baidu.com/xxx.jpg",
@@ -89,16 +89,16 @@ Routes:
 #request
 ------------------------------------------------------------------------
 {
-    title:网约车欢庆新政之后，恐迎来地方部门更严厉制裁,
-    readCount:1000,
-    authorName:罗明川,
-    nodes:[
-        {
-            "text":"网约车合法化，似乎苦尽甘来，几乎大家都在欢庆政策对网约车放宽？但最终的结果可能是：未来恐怕迎来更加严厉的制裁，这可能并不是危言耸听。",
-            "imageUrl":"http://e.hiphotos.baidu.com/xxx.jpg",
-            "imageDescription":"bla bla bla..."
-        }
-    ]
+  "title":"网约车欢庆新政之后，恐迎来地方部门更严厉制裁",
+  "readCount":1000,
+  "authorName":"罗明川",
+  "nodes":[
+    {
+      "text":"网约车合法化，似乎苦尽甘来，几乎大家都在欢庆政策对网约车放宽？但最终的结果可能是：未来恐怕迎来更加严厉的制裁，这可能并不是危言耸听。",
+      "imageUrl":"http://e.hiphotos.baidu.com/xxx.jpg",
+      "imageDescription":"bla bla bla..."
+    }
+  ]
 }
 ------------------------------------------------------------------------
 #responses
